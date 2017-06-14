@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const rp = require('request-promise');
 const moment = require('moment');
 const levelup = require('level');
@@ -60,6 +61,8 @@ function mPut(id, data) {
         })
     });
 }
+
+app.use(cors());
 
 app.get('/', (req, res, next) => {
     res.type('text').end('(c) BachNx');
