@@ -1,0 +1,23 @@
+{
+  "name": "zingmp3-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.15.3",
+    "moment": "^2.18.1",
+    "mongodb": "^2.2.28",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "BachNx",
+  "license": "ISC",
+  "false": {}
+}
