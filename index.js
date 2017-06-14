@@ -66,9 +66,10 @@ app.get('/', (req, res, next) => {
 });
 
 app.get('/purge', (req, res, next) => {
-    db.close();
-    require('fs').unlinkSync('./db');
-    db.open();
+    db.createKeyStream()
+        .on('data', function (data) {
+            db.del(data);
+        });
     res.end('Cached purged!');
 });
 
@@ -78,7 +79,6 @@ app.get('/:id', (req, res, next) => {
         res.end('Invalid Album ID');
         return;
     }
-    console.log('Typeof: ', typeof req.query.nocache);
     mGet(id).then(obj => {
         if (!obj || isExpired(obj.createdAt) || typeof (req.query.nocache) != 'undefined') {
             // Must fetch new
