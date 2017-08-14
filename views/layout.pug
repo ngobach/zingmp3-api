@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        title= title
+        meta(charset='utf-8')
+        -
+            var css = [
+                'https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.2.14/spectre.min.css',
+                'https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.2.14/spectre-exp.min.css',
+                'https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.2.14/spectre-icons.min.css'
+            ]
+        each url in css
+            link(rel='stylesheet' href!=url)
+        block head
+    body
+        .container(style='max-width: 800px')
+            header.navbar.mt-10
+                section.navbar-section
+                    a.navbar-brand.mr-10(href='/admin') ZingMP3 API
+                section.navbar-section
+                    if (domain)
+                        a.btn.btn-link(href='/admin/changepass') Change Password
+                        a.btn.btn-link(href='/admin/logout') Logout
+                    else
+                        a.btn.btn-link(href='/admin/login') Login
+                        a.btn.btn-link(href='/admin/register') Register
+            block body
+        block foot

@@ -1,0 +1,19 @@
+extends ./layout
+block body
+    .columns
+        .column.col-3
+        .column.col-6
+            h1.text-center Change password
+            form(action='' method='POST')
+                .form-group
+                    label.form-label Old password
+                    input.form-input(type='password' name='old_password')
+                .form-group
+                    label.form-label New password
+                    input.form-input(type='password' name='new_password')
+                .form-group
+                    label.form-label Retype new password
+                    input.form-input(type='password' name='retype_new_password')
+                include ./includes/toast
+                .form-group.text-center
+                    input.btn.btn-primary(type='submit' value='Send')

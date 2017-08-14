@@ -1,0 +1,17 @@
+extends ./layout
+
+block body
+    .columns
+        .column.col-3
+        .column.col-6
+            h1.text-center.mt-10.mb-10 Login
+            form.mt-10(action='/admin/login' method='POST')
+                .form-group
+                    label.form-label Fully qualified domain name (FQDN)
+                    input.form-input(type='text' name='domain')
+                .form-group
+                    label.form-label Password
+                    input.form-input(type='password' name='password')
+                include ./includes/toast
+                .text-center
+                    input.btn.btn-primary(type='submit' value='Login')

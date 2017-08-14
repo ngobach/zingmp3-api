@@ -1,0 +1,16 @@
+//-
+    Handle .errors
+    .errors = [{
+        msg: string
+    }]
+if errors
+    .toast.toast-error.mt-10.mb-10
+        for err in errors
+            div= err.msg
+//-
+    Handle .result = {
+        message : string,
+        class   : string
+    }
+else if result
+    .toast.mt-10.mb-10(class='toast-'+result.class)= result.message

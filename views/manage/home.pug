@@ -1,0 +1,28 @@
+extends ../layout
+include ../includes/mixins
+block body
+    .columns
+        .column.col-12
+            h1.text-center.mt-10.mb-10 Manage playlists
+            each pl in playlists
+                form.inline(action=`${baseUrl}/${pl.id}/delete` method='POST')
+                    label.chip #{pl.name} #[button.btn.btn-clear]
+            else
+                +empty('There is no playlist created. Add your first one')
+            .columns
+                .column.col-3
+                .column.col-6
+                    form.panel.mt-10(action=baseUrl, method='post')
+                        .panel-header
+                            .panel-title Add new Playlist
+                        .panel-body
+                            .form-group
+                                input.form-input(name='id' type='text' placeholder='Zing Mp3 Id. eg: IOZW6DUB, ...')
+                            .form-group
+                                input.form-input(name='name' type='text' placeholder='The playlist name')
+                            .form-group
+                                .input-group
+                                    span.input-group-addon Color
+                                    input.form-input(name='color' type='color')
+                            .panel-footer.text-center
+                                button.btn.btn-primary Add playlist

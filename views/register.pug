@@ -1,0 +1,23 @@
+extends ./layout
+
+//- Begin block body
+block body
+    .columns
+        .column.col-3
+        .column.col-6
+            h1.text-center Register form
+            form(action='/admin/register' method='POST')
+                .form-group
+                    label.form-label Domain name
+                    input.form-input(type='text' name='domain' placeholder='Your domain name' value=old&&old.domain required)
+                .form-group
+                    label.form-label Password
+                    input.form-input(type='password' name='password' placeholder='Your login password' value=old&&old.password required)
+                .form-group
+                    label.form-label Retype password
+                    input.form-input(type='password' name='repassword' placeholder='Retype above password' value=old&&old.repassword required)
+                include ./includes/toast
+                .form-group.text-center
+                    input.btn.btn-primary(type='submit' value='Register')
+                    |
+                    a.btn.btn-link(href='/admin') Home
