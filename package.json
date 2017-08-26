@@ -13,6 +13,7 @@
     "lru-cache": "^4.1.1",
     "moment": "^2.18.1",
     "mongodb": "^2.2.31",
+    "mz": "^2.6.0",
     "pug": "^2.0.0-rc.3",
     "request": "^2.81.0",
     "request-promise": "^4.2.1"

@@ -1,3 +1,9 @@
 /node_modules
+
+# Public directory for serving static files
 /public/*
 !/public/.gitkeep
+
+# Mp3 file caching directory
+/caches/*
+!/caches/.gitkeep
