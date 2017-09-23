@@ -19,11 +19,13 @@
     "request-promise": "^4.2.1"
   },
   "devDependencies": {
+    "eslint": "^4.7.2",
     "nodemon": "^1.11.0"
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "lint": "eslint ./lib"
   },
   "author": "BachNX",
   "license": "ISC"

@@ -7,3 +7,5 @@
 # Mp3 file caching directory
 /caches/*
 !/caches/.gitkeep
+
+/.vscode
